@@ -3,6 +3,9 @@ const inputEmail = document.getElementById("email")
 const inputPhone = document.getElementById('number')
 const inputMessage = document.getElementById("message")
 
+const form = document.getElementById('form');
+const result = document.getElementById('result');
+
 
 // Shows error on change
 inputName.addEventListener('change',e=>{
@@ -69,10 +72,23 @@ function sendemail(){
     validateForm()
     if(validationFinished){
     
-    var link = "mailto:jassymon114@gmail.com"
-             + "?subject=" + encodeURIComponent(`Need to contact ${inputName.value}`)
-             + "&body=" + encodeURIComponent(`Hi I am ${inputName.value}.I would like to connect to you. My Email ID is ${inputEmail.value} and my phone number is ${inputPhone.value}. I do have an message \n Message \n ${inputMessage.value}`);
+    // var link = "mailto:jassymon114@gmail.com"
+    //          + "?subject=" + encodeURIComponent(`Need to contact ${inputName.value}`)
+    //          + "&body=" + encodeURIComponent(`Hi I am ${inputName.value}.I would like to connect to you. My Email ID is ${inputEmail.value} and my phone number is ${inputPhone.value}. I do have an message \n Message \n ${inputMessage.value}`);
         
-    window.location.href = link;
+    // window.location.href = link;
     }
 }
+
+
+form.addEventListener('submit', function(e) {
+  
+
+e.preventDefault();
+  validationFinished = true;
+  validateForm()
+  if(validationFinished){
+    
+    this.submit();
+  }
+});

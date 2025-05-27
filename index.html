@@ -446,10 +446,12 @@
           </div>
 
           <div class="col-md-7 mb-5 mb-md-0">
-            <form class="site-form" novalidate>
+            <form action="https://api.web3forms.com/submit" class="site-form" novalidate method="POST" id="form">
+                  <input type="hidden" name="access_key" value="85280e1d-e415-4e6f-a78c-d0e930064eb2">
               <h3 class="mb-5">Get In Touch</h3>
               <div class="form-group">
                 <input
+                  name="name"
                   id="name"
                   class="form-control px-3 py-4"
                   placeholder="Your Name"
@@ -460,26 +462,29 @@
               </div>
               <div class="form-group">
                 <input
+                name="email"
                   id="email"
                   class="form-control px-3 py-4"
                   placeholder="Your Email"
                 />
                 <div id="emailerror" class="text-danger d-none">
-                  Please enter correct name.
+                  Please enter correct email.
                 </div>
               </div>
               <div class="form-group">
                 <input
+                name="phone number"
                   id="number"
                   class="form-control px-3 py-4"
                   placeholder="Your Phone"
                 />
                 <div id="phoneerror" class="text-danger d-none">
-                  Please enter correct name.
+                  Please enter correct phone number.
                 </div>
               </div>
               <div class="form-group mb-5">
                 <textarea
+                  name="message"
                   id="message"
                   class="form-control px-3 py-4"
                   cols="30"
@@ -487,17 +492,19 @@
                   placeholder="Write a Message"
                 ></textarea>
                 <div id="messageerror" class="text-danger d-none">
-                  Please enter correct name.
+                  Please enter correct message.
                 </div>
               </div>
               <div class="form-group">
                 <input
-                  type="button"
+                  type="submit"
                   onclick="sendemail()"
                   class="btn btn-primary px-4 py-3"
                   value="Send Message"
                 />
               </div>
+              <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+              <div id="result"></div>
             </form>
           </div>
           <div class="col-md-5 pl-md-5">

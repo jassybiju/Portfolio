@@ -25,7 +25,7 @@ inputMessage.addEventListener('change',e=>{
 function validateForm(x){
     switch(x){
         case 'name':
-            showError( /^[a-zA-Z ]{2,30}$/.test(inputName.value) , 'name');
+            showError( /^[a-zA-Z ]{2,30}$/.test(inputName.value.trim()) , 'name');
             break;
         case 'email':
             showError(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(inputEmail.value),'email');
@@ -34,7 +34,7 @@ function validateForm(x){
             showError(/^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/.test(inputPhone.value),'phone');
             break;
         case 'message':
-            showError((inputMessage.value).length > 0,'message');
+            showError((inputMessage.value.trim()).length > 0,'message');
             break;
         default:
             validateForm('name');
